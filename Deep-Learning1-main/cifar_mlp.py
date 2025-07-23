@@ -32,6 +32,7 @@ plt.plot(history.history['loss'], label='Loss')
 plt.plot(history.history['accuracy'], label='Accuracy')
 plt.legend()
 plt.show() 
+plt.title("Train and validation")
 
 
 
