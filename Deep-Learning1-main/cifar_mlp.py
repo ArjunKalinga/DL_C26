@@ -14,12 +14,14 @@ y_test = to_categorical(y_test)
 # Build model
 model = Sequential()
 model.add(Flatten(input_shape=(32, 32, 3)))
+model.add(Dense(1024, activation='relu'))
+model.add(Dense(512, activation='relu'))
 model.add(Dense(256, activation='relu'))
 model.add(Dense(128, activation='relu'))
+model.add(Dense(64, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 
-# Compile
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+# Compile    zer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Train and save history
 history = model.fit(x_train, y_train, epochs=20, batch_size=64)
